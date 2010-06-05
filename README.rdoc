@@ -38,7 +38,8 @@ Examples have not been written yet.
 == Requirements
 
 * {oauth}[http://rubygems.org/gems/oauth]
-* {crack}[http://rubygems.org/gems/crack]
+* {json}[http://rubygems.org/gems/json]
+* {htmlentities}[http://rubygems.org/gems/htmlentities]
 
 == Installation
 
