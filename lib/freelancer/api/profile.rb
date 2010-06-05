@@ -48,10 +48,17 @@ module Freelancer
             :hourlyrate => details.hourlyrate,
             :skills => details.skills
           }
-          json = JSON.generate(params)
           
-          result = api_post("/Profile/setProfileInfo.json", json)
-          result.inspect
+          # Remove any nil value params
+          params.keys.each do |k|
+            params.delete(k) if params[k].nil?
+          end
+          
+          result = api_get("/Profile/setProfileInfo.json", params)
+          if result.key?("xml-result") && result["xml-result"].key?("statusconfirmation") && result["xml-result"]["statusconfirmation"] == 1
+            return true
+          end
+          false
 
         end
           

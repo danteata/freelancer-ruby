@@ -65,7 +65,7 @@ module Freelancer
     def api_get(method, options = {})
       response = access_token.get(to_uri(method, options))
       raise_api_errors!(response)
-      JSON.parse(response.body)
+      JSON.parse(html_decode(response.body))
     end
     
     # Execute a GET-requset for the specified API method and return the raw
@@ -118,9 +118,16 @@ module Freelancer
     # Convert a hash to a proper query string
     def to_query(params)
       params.inject([]) do |collection, options|
+        options[1] = URI.escape(options[1]) if options[1].is_a?(String) && !options[1].nil?
         collection << "#{options[0]}=#{options[1]}"
         collection
       end * "&"
+    end
+    
+    # Decode any HTML entities in the given string
+    def html_decode(str)
+      encoder = HTMLEntities.new
+      encoder.decode(str)
     end
     
   end

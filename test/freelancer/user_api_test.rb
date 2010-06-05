@@ -54,7 +54,7 @@ class UserApiTest < Test::Unit::TestCase
       user.jobs[0].should == "JSP"
       user.jobs[1].should == "Perl"
       user.jobs[2].should == "PHP"
-      user.jobs[3].should == "Ruby &amp; Ruby on Rails"
+      user.jobs[3].should == "Ruby & Ruby on Rails"
       
     end
     

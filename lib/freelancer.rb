@@ -1,5 +1,6 @@
 require "oauth"
 require "json/ext"
+require "htmlentities"
 
 module Freelancer
   

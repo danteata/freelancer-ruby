@@ -49,7 +49,7 @@ class ProfileApiTest < Test::Unit::TestCase
       details.qualifications[0].should == "PHP"
       details.qualifications[1].should == "Perl"
       details.qualifications[2].should == "JSP"
-      details.qualifications[3].should == "Ruby &amp; Ruby on Rails"
+      details.qualifications[3].should == "Ruby & Ruby on Rails"
       
       details.latest_open_projects.size.should == 0
       details.latest_closed_projects.size.should == 0
@@ -61,6 +61,18 @@ class ProfileApiTest < Test::Unit::TestCase
       details.latest_frozen_projects.first.id.should == 148
       details.latest_frozen_projects.first.name.should == "Test project to get some reviews on my account"
       details.latest_frozen_projects.first.url.should == "http://www.sandbox.freelancer.com/NET/Test-project-get-some-reviews.html.html"
+      
+    end
+    
+    should "update my account details" do
+      
+      account = Freelancer::Models::Account.new
+      account.fullname = "Test User"
+      
+      stub_api_get("/Profile/setProfileInfo.json?fullname=Test%20User&qualificationcsv=", "set_profile_info.json")
+      
+      status = @freelancer.update_account_details(account)
+      status.should == true
       
     end
     

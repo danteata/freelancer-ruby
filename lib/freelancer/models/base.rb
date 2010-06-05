@@ -9,7 +9,7 @@ module Freelancer
 
       # Initialize a new instance of the data model. It expects a hash
       # containing the fields to be set on the model.
-      def initialize(params, wrapper_element = nil)
+      def initialize(params = {}, wrapper_element = nil)
         
         params = {} if !params.is_a?(Hash) or params.nil?
         
