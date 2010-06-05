@@ -1,6 +1,12 @@
 = Freelancer API
-by Trond Arve Nordheim
-["Binary Marbles":http://www.binarymarbles.com/]
+by Trond Arve Nordheim <http://www.binarymarbles.com/>
+
+== NOTICE
+
+This is a project under heavy development. The API is far from stable yet, and
+the code is very unclean in some places. The API won't be considered stable
+until all the full Freelancer.com API is implemented and have tests verifying
+that they work like they should.
 
 == Description
 
@@ -10,12 +16,13 @@ A Ruby gem for working with the new Freelancer.com API.
 
 * oAuth authentication.
 * User API support.
+* Job API support.
+* Profile API support.
 
 == Issues and missing features
 
 * The User API is missing support for feedbacks and insignias.
-* The Job API is not implemented yet.
-* The Profile API is not implemented yet.
+* The Profile API is missing support for setProfileInfo method.
 * The Employer API is not implemented yet.
 * The Freelancer API is not implemented yet.
 * The Common API is not implemented yet.
@@ -35,17 +42,14 @@ Examples have not been written yet.
 
 == Installation
 
- $ gem install mongo_mapper
+ $ gem install freelancer
 
 == Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a future version
-unintentionally.
-* Commit, do not mess with rakefile, version, or history. (if you want to have
-your own version, that is fine but bump version in a commit by itself I can
-ignore when I pull).
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull).
 * Send me a pull request. Bonus points for topic branches.
 
 == License
