@@ -1,0 +1,1 @@
+{"xml-result":{"count":2,"items":[{"username":"test1","userid":"12345","company":"Test Corp.","address":{"country":"Australia","city":"sydney"},"averagepricing":null},{"username":"test2","userid":"12346","company":"Test Corp. 2","address":{"country":"Australia","city":"Sydney"},"averagepricing":"10"}]}}
