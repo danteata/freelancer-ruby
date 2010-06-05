@@ -7,6 +7,7 @@ module Freelancer
     api API::User
     api API::Job
     api API::Profile
+    api API::Employer
     
     attr_reader :consumer_token, :consumer_secret, :consumer_options
     
@@ -65,7 +66,7 @@ module Freelancer
     def api_get(method, options = {})
       response = access_token.get(to_uri(method, options))
       raise_api_errors!(response)
-      JSON.parse(html_decode(response.body))
+      JSON.parse(html_decode(response.body), { :symbolize_names => true })
     end
     
     # Execute a GET-requset for the specified API method and return the raw

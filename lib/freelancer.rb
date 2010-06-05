@@ -13,6 +13,7 @@ module Freelancer
     autoload :User, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "user")
     autoload :Job, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "job")
     autoload :Profile, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "profile")
+    autoload :Employer, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "employer")
   end
   
   module Models
@@ -21,6 +22,20 @@ module Freelancer
     autoload :JobCategory, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "job_category")
     autoload :Account, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "account")
     autoload :ProjectAssociation, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_association")
+    autoload :Project, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project")
+  end
+  
+  module Support
+    autoload :JSONMapper, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "support", "json_mapper")
   end
   
 end
+
+#
+# Add some Ruby object extensions if they're missing
+# -----------------------------------------------------------------------------
+
+# Hash extensions
+#unless {}.respond_to?(:symbolize_keys)
+#  require File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "extensions", "hash")
+#end

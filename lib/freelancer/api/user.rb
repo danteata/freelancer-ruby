@@ -13,7 +13,8 @@ module Freelancer
             params[:username] = identifier
           end
 
-          Models::User.new(api_get("/User/getUserDetails.json", params), "user")
+          result = api_get("/User/getUserDetails.json", params)
+          !result.nil? && result.key?(:user) ? Models::User.from_json(result[:user]) : nil
 
         end
         
@@ -31,9 +32,9 @@ module Freelancer
           users = []
           
           # Fetch users from the result set
-          if result.keys.first == "xml-result" && result["xml-result"].key?("items") && result["xml-result"]["items"].is_a?(Array)
-            result["xml-result"]["items"].each do |item|
-              users << Models::User.new(item)
+          if result.keys.first == :"xml-result" && result[:"xml-result"].key?(:items) && result[:"xml-result"][:items].is_a?(Array)
+            result[:"xml-result"][:items].each do |item|
+              users << Models::User.from_json(item)
             end
           end
           

@@ -21,7 +21,7 @@ class JobApiTest < Test::Unit::TestCase
       
       categories.size.should == 10
       
-      categories.first.id.should == "15"
+      categories.first.category_id.should == "15"
       categories.first.name.should == ".NET"
       categories.first.project_count.should == "7"
       categories.first.seo_url.should == "NET"

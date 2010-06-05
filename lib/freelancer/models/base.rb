@@ -2,42 +2,60 @@ module Freelancer
   module Models
     class Base
       
-      # Set an attribute on the model using the specified key and value pair
-      def set_attribute(key, value)
-        self.send("#{key}=", value) if self.respond_to?("#{key}=")
-      end  
+      # DSL method for assigning the JSON structure of a model
+      def self.json_structure(&structure)
+        @@json_structure ||= {}
+        @@json_structure[self.to_s.to_sym] = structure if block_given?
+      end
+      
+      # Returns the current JSON DSL
+      def self.json_dsl
+        @@json_structure ||= {}
+        @@json_structure[self.to_s.to_sym]
+      end
+      
+      # Create a new instance of this model and populate the attributes with
+      # data from the specified JSON string
+      def self.from_json(json)
 
-      # Initialize a new instance of the data model. It expects a hash
-      # containing the fields to be set on the model.
-      def initialize(params = {}, wrapper_element = nil)
+        raise "No JSON structure DSL defined" if json_dsl.nil?
         
-        params = {} if !params.is_a?(Hash) or params.nil?
+        # puts "Creating new #{self.to_s} from: #{json.inspect}"
         
-        # Strip off the wrapper element if specified and round
-        params = params[wrapper_element] if !wrapper_element.nil? && params.keys.first == wrapper_element
-        
-        unless params.nil? || params.empty?
-          params.each_pair do |key, value|
-            
-            if value.is_a?(Hash)
-              
-              # If the value is a hash, take the key of the current param and
-              # append the key of each item in the value hash and set those as
-              # model parameters.
-              value.each_pair do |inner_key, inner_value|
-                self.set_attribute("#{key}_#{inner_key}", inner_value)
-              end
-              
-            else
-              
-              # Otherwise, just set the value as-is on the model
-              self.set_attribute(key, value)
-              
-            end
-            
-          end
-        end
+        model = self.new
+        mapper = Support::JSONMapper.new(model)
+        mapper.instance_eval(&json_dsl)
+        model = mapper.from_json(json)
 
+      end
+      
+      # Convert the current object to a JSON data structure
+      def to_json
+        
+        raise "No JSON structure DSL defined" if self.class.json_dsl.nil?
+        
+        mapper = Support::JSONMapper.new(self)
+        mapper.instance_eval(&self.class.json_dsl)
+        mapper.to_json
+        
+      end
+      
+      # Set an attribute on the model using the specified key and value pair.
+      # This will throw an exception if the setter-method doesn't exist or is
+      # outside of the visible scope.
+      def []=(key, value)
+        self.send("#{key}=", value)
+      end
+      
+      # Returns the value of an attribute on the model using the specified key
+      # This will throw an exception if the getter-method doesn't exist or is
+      # outside of the visible scope.
+      def [](key)
+        self.send("#{key}")
+      end
+
+      # Initialize a new instance of the data model.
+      def initialize
       end
       
     end

@@ -1,18 +1,18 @@
 module Freelancer
   module API
-    module Job
+    module Employer
       module InstanceMethods
         
-        # Get a list of job categories
-        def job_categories
+        # Post a new project
+        def post_project
           
           result = api_get("/Job/getJobList.json")
           categories = []
           
           # Fetch categories from the result set
-          if result.keys.first == :"xml-result" && result[:"xml-result"].key?(:items) && result[:"xml-result"][:items].is_a?(Array)
-            result[:"xml-result"][:items].each do |item|
-              categories << Models::JobCategory.from_json(item)
+          if result.keys.first == "xml-result" && result["xml-result"].key?("items") && result["xml-result"]["items"].is_a?(Array)
+            result["xml-result"]["items"].each do |item|
+              categories << Models::JobCategory.new(item)
             end
           end
           

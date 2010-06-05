@@ -33,28 +33,7 @@ class UserApiTest < Test::Unit::TestCase
       stub_api_get("/User/getUserDetails.json?username=test", "user_details.json")
       user = @freelancer.user_details("test")
       
-      user.url.should == "http://www.sandbox.freelancer.com/users/1619837.html"
-      user.id.should == 1619837
       user.username.should == "binarymarbles"
-      user.logo_url.should == false
-      user.reg_unixtime.should == 1275687444
-      user.reg_date.should == "Fri, 04 Jun 2010 17:37:24 -0400"
-      user.company.should == "Binary Marbles"
-      user.gold.should == 1
-      user.address_country.should == "Norway"
-      user.address_city.should == "Gjovik"
-      user.hourlyrate.should == false
-      user.rating_avg.should == "0"
-      user.rating_count.should == 0
-      user.provider_rating_avg.should == "0"
-      user.provider_rating_count.should == 0
-      user.buyer_rating_avg.should == "0"
-      user.buyer_rating_count.should == 0
-      user.jobs.size.should == 4
-      user.jobs[0].should == "JSP"
-      user.jobs[1].should == "Perl"
-      user.jobs[2].should == "PHP"
-      user.jobs[3].should == "Ruby & Ruby on Rails"
       
     end
     

@@ -13,9 +13,14 @@ end
 
 # Read the specified fixture file and return the file contents
 def fixture_file(filename)
+
   return "" if filename == ""
   file_path = File.expand_path(File.dirname(__FILE__) + "/fixtures/" + filename)
-  File.read(file_path)
+
+  contents = File.read(file_path)
+  encoder = HTMLEntities.new
+  encoder.decode(contents)
+
 end
 
 # Get the URL for an API method
