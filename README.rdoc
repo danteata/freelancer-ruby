@@ -1,5 +1,6 @@
 = Freelancer API
-by Trond Arve Nordheim <http://www.binarymarbles.com>
+by Trond Arve Nordheim -
+{Binary Marbles}[http://www.binarymarbles.com/]
 
 == NOTICE
 
@@ -37,8 +38,8 @@ Examples have not been written yet.
 
 == Requirements
 
-* ["oauth":http://rubygems.org/gems/oauth]
-* ["crack":http://rubygems.org/gems/crack]
+* {oauth}[http://rubygems.org/gems/oauth]
+* {crack}[http://rubygems.org/gems/crack]
 
 == Installation
 
