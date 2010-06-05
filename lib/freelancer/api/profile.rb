@@ -13,6 +13,47 @@ module Freelancer
         def profile_info(user_id)
           get_profile_info("/Profile/getProfileInfo.json", { :userid => user_id })
         end
+        
+        # Update the details of the current user account
+        # TODO: Finish this method. I'm getting an unknown error from the API
+        # when calling the method, further investigation of what's going on is
+        # needed.
+        def update_account_details(details)
+          
+          # Validate the argument type
+          raise ArgumentError("Details must be a Freelancer::Models::Account object") unless details.is_a?(Freelancer::Models::Account)
+          
+          # Create a JSON body from the object
+          params = {
+            :fullname => details.fullname,
+            :company_name => details.company_name,
+            :type_of_work => details.type_of_work,
+            :addressline1 => details.addressline1,
+            :addressline2 => details.addressline2,
+            :city => details.city,
+            :state => details.state,
+            :country => details.country,
+            :postalcode => details.postalcode,
+            :phone => details.phone,
+            :fax => details.fax,
+            :notificationformat => details.notificationformat,
+            :emailnotificationstatus => details.emailnotificationstatus,
+            :receivenewsstatus => details.receivenewsstatus,
+            :bidwonnotificationstatus => details.bidwonnotificationstatus,
+            :newprivatemessagestatus => details.newprivatemessagestatus,
+            :qualificationcsv => details.qualifications.join(","),
+            :profiletext => details.profiletext,
+            :vision => details.vision,
+            :keywords => details.keywords,
+            :hourlyrate => details.hourlyrate,
+            :skills => details.skills
+          }
+          json = JSON.generate(params)
+          
+          result = api_post("/Profile/setProfileInfo.json", json)
+          result.inspect
+
+        end
           
         private
 

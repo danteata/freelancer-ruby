@@ -65,7 +65,7 @@ module Freelancer
     def api_get(method, options = {})
       response = access_token.get(to_uri(method, options))
       raise_api_errors!(response)
-      Crack::JSON.parse(response.body)
+      JSON.parse(response.body)
     end
     
     # Execute a GET-requset for the specified API method and return the raw
@@ -73,6 +73,14 @@ module Freelancer
     def api_get_raw(method, options = {})
       response = access_token.get(to_uri(method, options))
       raise_api_errors!(response)
+      response.body
+    end
+    
+    # Execute a POST-request for the specified API method
+    # TODO: Finish this method, it should probably return some JSON decoded
+    # string.
+    def api_post(method, body)
+      response = access_token.post(method, body)
       response.body
     end
     

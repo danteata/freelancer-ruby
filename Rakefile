@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.files = [ "LICENSE", "Rakefile", "Readme.RDOC", "VERSION" ]
   
   gem.add_dependency "oauth", ">= 0.4.0"
-  gem.add_dependency "crack", ">= 0.1.7"
+  gem.add_dependency "json", ">= 1.4.3"
   
   gem.add_development_dependency "shoulda", ">= 2.10.3"
   gem.add_development_dependency "mcmire-matchy", ">= 0.5.2"

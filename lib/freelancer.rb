@@ -1,5 +1,5 @@
 require "oauth"
-require "crack"
+require "json/ext"
 
 module Freelancer
   
