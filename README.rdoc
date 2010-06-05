@@ -1,5 +1,5 @@
 = Freelancer API
-by Trond Arve Nordheim <http://www.binarymarbles.com/>
+by Trond Arve Nordheim <http://www.binarymarbles.com>
 
 == NOTICE
 
