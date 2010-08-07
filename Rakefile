@@ -1,5 +1,6 @@
 require "rake"
 require "jeweler"
+require "bundler"
 require "rake/testtask"
 
 # Gemcutter/Jeweler configuration
@@ -15,14 +16,16 @@ Jeweler::Tasks.new do |gem|
   
   gem.files = [ "LICENSE", "Rakefile", "Readme.RDOC", "VERSION" ]
   
-  gem.add_dependency "oauth", ">= 0.4.0"
-  gem.add_dependency "json", ">= 1.4.3"
-  gem.add_dependency "htmlentities", ">= 4.2.1"
+  gem.add_bundler_dependencies
   
-  gem.add_development_dependency "shoulda", ">= 2.10.3"
-  gem.add_development_dependency "mcmire-matchy", ">= 0.5.2"
-  gem.add_development_dependency "mocha", ">= 0.9.8"
-  gem.add_development_dependency "fakeweb", ">= 1.2.8"
+  # gem.add_dependency "oauth", ">= 0.4.0"
+  # gem.add_dependency "json", ">= 1.4.3"
+  # gem.add_dependency "htmlentities", ">= 4.2.1"
+  # 
+  # gem.add_development_dependency "shoulda", ">= 2.10.3"
+  # gem.add_development_dependency "mcmire-matchy", ">= 0.5.2"
+  # gem.add_development_dependency "mocha", ">= 0.9.8"
+  # gem.add_development_dependency "fakeweb", ">= 1.2.8"
 
 end
 Jeweler::GemcutterTasks.new
