@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "freelancer.gemspec",
      "init.rb",
      "lib/freelancer.rb",
      "lib/freelancer/api.rb",
@@ -268,7 +269,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<oauth>, [">= 0.4.0"])
       s.add_runtime_dependency(%q<htmlentities>, [">= 4.2.1"])
-      s.add_runtime_dependency(%q<json_mapper>, [">= 0"])
+      s.add_runtime_dependency(%q<json_mapper>, [">= 0.2.0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 2.10.3"])
       s.add_development_dependency(%q<mcmire-matchy>, [">= 0.5.2"])
@@ -277,7 +278,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<oauth>, [">= 0.4.0"])
       s.add_dependency(%q<htmlentities>, [">= 4.2.1"])
-      s.add_dependency(%q<json_mapper>, [">= 0"])
+      s.add_dependency(%q<json_mapper>, [">= 0.2.0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 2.10.3"])
       s.add_dependency(%q<mcmire-matchy>, [">= 0.5.2"])
@@ -287,7 +288,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<oauth>, [">= 0.4.0"])
     s.add_dependency(%q<htmlentities>, [">= 4.2.1"])
-    s.add_dependency(%q<json_mapper>, [">= 0"])
+    s.add_dependency(%q<json_mapper>, [">= 0.2.0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 2.10.3"])
     s.add_dependency(%q<mcmire-matchy>, [">= 0.5.2"])
