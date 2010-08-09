@@ -1,0 +1,16 @@
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>1</count>
+  <items>
+    <project>
+      <projectname>rick+2 project 5</projectname>
+      <projectid>589168</projectid>
+      <projecturl>http://www.sandbox.freelancer.com/projects/NET/rick-project.589168.html</projecturl>
+      <bidcount>1</bidcount>
+      <averagebid>250</averagebid>
+      <pmb />
+      <status>A</status>
+      <enddate>2010-05-17 21:37:35</enddate>
+      <additionalstatus>Open</additionalstatus>
+    </project>
+  </items>
+</xml-result>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <balanceamount>19608.76</balanceamount>
+  <transtext>Transfer to shaneyls for project test project 1 posted by API curl (Partial payment for project)</transtext>
+  <textlinks>
+    <userlink>http://www.sandbox.freelancer.com/users/1289625.html</userlink>
+    <projectlink>http://www.sandbox.freelancer.com/projects/658026.html</projectlink>
+  </textlinks>
+  <transactionid>3165579</transactionid>
+  <transuserid>1619632</transuserid>
+  <transdatetime>04/26/2010 at 20:30 EDT</transdatetime>
+</xml-result>

@@ -15,6 +15,6 @@ module Freelancer
       apis << api
       
     end
-    
+
   end
 end

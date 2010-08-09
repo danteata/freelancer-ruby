@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<User xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <url>http://www.sandbox.freelancer.com/users/1353594.html</url>
+  <id>1353594</id>
+  <username>lsy001</username>
+  <logo_url />
+  <reg_unixtime>1265161755</reg_unixtime>
+  <reg_date>Tue, 02 Feb 2010 20:49:15 -0500</reg_date>
+  <company>freelancer.com</company>
+  <gold>1</gold>
+  <address>
+    <country>Australia</country>
+    <city>Sydney</city>
+  </address>
+  <hourlyrate />
+  <rating>
+    <avg>9.25</avg>
+    <count>4</count>
+  </rating>
+  <provider_rating>
+    <avg>0</avg>
+    <count>0</count>
+  </provider_rating>
+  <buyer_rating>
+    <avg />
+    <count>4</count>
+  </buyer_rating>
+  <jobs>
+    <job>.NET</job>
+    <job>Java</job>
+  </jobs>
+</User>

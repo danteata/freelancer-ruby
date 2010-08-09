@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>6</count>
+  <items>
+    <budget>
+      <id>5</id>
+      <minbudget>30</minbudget>
+      <maxbudget>250</maxbudget>
+      <name>simple project</name>
+    </budget>
+    <budget>
+      <id>1</id>
+      <minbudget>250</minbudget>
+      <maxbudget>750</maxbudget>
+      <name>very small project</name>
+    </budget>
+    <budget>
+      <id>2</id>
+      <minbudget>750</minbudget>
+      <maxbudget>1500</maxbudget>
+      <name>small project</name>
+    </budget>
+    <budget>
+      <id>3</id>
+      <minbudget>1500</minbudget>
+      <maxbudget>3000</maxbudget>
+      <name>medium project</name>
+    </budget>
+    <budget>
+      <id>4</id>
+      <minbudget>3000</minbudget>
+      <maxbudget>5000</maxbudget>
+      <name>large project</name>
+    </budget>
+    <budget>
+      <id>6</id>
+      <minbudget>5000</minbudget>
+      <maxbudget />
+      <name>larger project</name>
+    </budget>
+  </items>
+</xml-result>

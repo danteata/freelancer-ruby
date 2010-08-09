@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>2</count>
+  <items>
+    <news>
+      <newsid>132</newsid>
+      <newstext>Thanks to edvans for the following <a href="/Freelancer_Origami_medium.pdf">instructions</a>.</newstext>
+    </news>
+    <news>
+      <newsid>102</newsid>
+      <newstext>Think we&apos;re missing a job category that you&apos;d like added? Let us know by lodging a support ticket under "Category Request"! </newstext>
+    </news>
+  </items>
+</xml-result>

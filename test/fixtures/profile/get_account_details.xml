@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <username>lsy001</username>
+  <userid>1619632</userid>
+  <fullname>lisheng</fullname>
+  <company_name>gaf</company_name>
+  <type_of_work>Both</type_of_work>
+  <picture_url>k.jpg</picture_url>
+  <addressline1>123 pitt st.</addressline1>
+  <addressline2 />
+  <city>sydney</city>
+  <state />
+  <country>Australia</country>
+  <postalcode>2000</postalcode>
+  <phone>0404044044</phone>
+  <fax />
+  <notificationformat>text/html</notificationformat>
+  <emailnotificationstatus>1</emailnotificationstatus>
+  <receivenewsstatus>0</receivenewsstatus>
+  <bidwonnotificationstatus>1</bidwonnotificationstatus>
+  <bidplacednotificationstatus>1</bidplacednotificationstatus>
+  <newprivatemessagestatus>1</newprivatemessagestatus>
+  <profiletext />
+  <vision />
+  <keywords />
+  <hourlyrate />
+  <skills>skillA
+    skillB
+    skillC
+    skillD
+  </skills>
+  <qualificationcsv>PHP,Java,.NET</qualificationcsv>
+  <openBuyerProjectList>
+    <project>
+      <id>658030</id>
+      <name>test project 33 posted by API curl</name>
+      <url>http://www.sandbox.freelancer.com/PHP-Java/test-project-posted-API-curl.658030.html</url>
+    </project>
+    <project>
+      <id>658029</id>
+      <name>test project 3 posted by API curl</name>
+      <url>http://www.sandbox.freelancer.com/PHP-Java/test-project-posted-API-curl.658029.html</url>
+    </project>
+    <project>
+      <id>658028</id>
+      <name>test project 2 posted by API curl</name>
+      <url>http://www.sandbox.freelancer.com/PHP-Java/test-project-posted-API-curl.658028.html</url>
+    </project>
+  </openBuyerProjectList>
+  <closeBuyerProjectList>
+    <project>
+      <id>658026</id>
+      <name>test project 1 posted by API curl</name>
+      <url>http://www.sandbox.freelancer.com/PHP-Java/test-project-posted-API-curl.html</url>
+    </project>
+  </closeBuyerProjectList>
+  <bidSellerProjectList>
+    <project>
+      <id>658033</id>
+      <name>project2 for lsy001</name>
+      <url>http://www.sandbox.freelancer.com/Java-NET/project-for-lsy.658033</url>
+    </project>
+  </bidSellerProjectList>
+  <wonSellerProjectList>
+    <project>
+      <id>658031</id>
+      <name>project for lsy001</name>
+      <url>http://www.sandbox.freelancer.com/Java-NET/project-for-lsy</url>
+    </project>
+  </wonSellerProjectList>
+</xml-result>

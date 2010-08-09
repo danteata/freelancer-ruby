@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>2</count>
+  <items>
+    <message>
+      <projectid>658028</projectid>
+      <fromusername>lsy003</fromusername>
+      <fromuserid>1619638</fromuserid>
+      <datetime>2010-04-19 23:45:48</datetime>
+      <message>msg post online</message>
+      <attachmentlink />
+    </message>
+    <message>
+      <projectid>658028</projectid>
+      <fromusername>shaneyls</fromusername>
+      <fromuserid>1289625</fromuserid>
+      <datetime>2010-04-14 21:20:40</datetime>
+      <message>reply ...</message>
+      <attachmentlink />
+    </message>
+  </items>
+</xml-result>

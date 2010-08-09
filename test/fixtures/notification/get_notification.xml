@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>1</count>
+  <items>
+    <notification>
+      <notificationtext>Your user profile hasn&apos;t been filled yet. <a href=&apos;../users/changeuserinfo.php&apos;>Click here</a> to fill it in</notificationtext>
+      <url>http://www.sandbox.freelancer.com/users/changeuserinfo.php</url>
+    </notification>
+  </items>
+</xml-result>

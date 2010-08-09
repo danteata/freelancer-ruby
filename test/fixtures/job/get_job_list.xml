@@ -1,0 +1,17 @@
+<xml-result>
+  <count>281</count>
+  <items>
+    <Job>
+      <id>15</id>
+      <name>.NET</name>
+      <project_count>181</project_count>
+      <seo_url>NET</seo_url>
+    </Job>
+    <Job>
+      <id>194</id>
+      <name>Academic Writing</name>
+      <project_count>104</project_count>
+      <seo_url>Academic-Writing</seo_url>
+    </Job>
+  </items>
+</xml-result>

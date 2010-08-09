@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>1</count>
+  <items>
+    <bid>
+      <provider>lsy001</provider>
+      <provider_userid>1102865</provider>
+      <bid_amount>300</bid_amount>
+      <milestone>20%($60)</milestone>
+      <highlighted>1</highlighted>
+      <period>20</period>
+      <descr>bid by API</descr>
+      <submittime />
+      <rating>9.25</rating>
+      <total_msg_count>0</total_msg_count>
+      <unread_msg_count>0</unread_msg_count>
+    </bid>
+  </items>
+</project>

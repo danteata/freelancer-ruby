@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>4</count>
+  <items>
+    <project>
+      <id>730003</id>
+      <name>Product Configuration tool for Magento</name>
+      <selectedfreelancer>
+        <id>1382696</id>
+        <username>lyuy</username>
+        <bidamount>80</bidamount>
+        <paidamount>5350</paidamount>
+      </selectedfreelancer>
+    </project>
+    <project>
+      <id>730031</id>
+      <name>Product Configuration tool for Magento 2</name>
+      <selectedfreelancer>
+        <id>1382696</id>
+        <username>lyuy</username>
+        <bidamount>100</bidamount>
+        <paidamount>290</paidamount>
+      </selectedfreelancer>
+    </project>
+    <project>
+      <id>730032</id>
+      <name>Product Configuration tool for Magento 3</name>
+      <selectedfreelancer>
+        <id>1382696</id>
+        <username>lyuy</username>
+        <bidamount>80</bidamount>
+        <paidamount>0</paidamount>
+      </selectedfreelancer>
+      <selectedfreelancer>
+        <id>1346988</id>
+        <username>lishengY</username>
+        <bidamount>250</bidamount>
+        <paidamount>3000</paidamount>
+      </selectedfreelancer>
+    </project>
+    <project>
+      <id>722297</id>
+      <name>Project for cfk3</name>
+      <selectedfreelancer>
+        <id>756803</id>
+        <username>cfk</username>
+        <bidamount>33</bidamount>
+        <paidamount>0</paidamount>
+      </selectedfreelancer>
+    </project>
+  </items>
+</xml-result>

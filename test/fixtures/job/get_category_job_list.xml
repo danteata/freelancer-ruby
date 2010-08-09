@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>10</count>
+  <items>
+    <category>
+      <id>1</id>
+      <name>Websites, IT & Software</name>
+      <job>
+        <id>15</id>
+        <name>.NET</name>
+        <project_count>288</project_count>
+        <seo_url>NET</seo_url>
+      </job>
+      <job>
+        <id>223</id>
+        <name>Active Directory</name>
+        <project_count>10</project_count>
+        <seo_url>Active-Directory</seo_url>
+      </job>
+      <job>
+        <id>51</id>
+        <name>AJAX</name>
+        <project_count>193</project_count>
+        <seo_url>AJAX</seo_url>
+      </job>
+      <job>
+        <id>319</id>
+        <name>Amazon Web Services</name>
+        <project_count>17</project_count>
+        <seo_url>Amazon-Web-Services</seo_url>
+      </job>
+    </category>
+  </items>
+</xml-result>

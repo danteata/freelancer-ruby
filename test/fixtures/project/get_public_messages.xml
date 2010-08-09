@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>3</count>
+  <items>
+    <message>
+      <fromusername>lsy001</messagebyusername>
+      <fromuserid>1353594</messagebyuserid>
+      <datetime>2010-04-06 04:30:01</messagedatetime>
+      <text>messages posted by API</text>
+      <attachmentlink />
+    </message>
+    <message>
+      <fromusername>lsy001</messagebyusername>
+      <fromuserid>1353594</messagebyuserid>
+      <datetime>2010-04-06 04:26:50</messagedatetime>
+      <text>messages posted by API</text>
+      <attachmentlink />
+    </message>
+    <message>
+      <fromusername>blueeyeboy</messagebyusername>
+      <fromuserid>1103918</messagebyuserid>
+      <datetime>2009-06-25 17:13:35</messagedatetime>
+      <text>well dear you wanna work i accept your deal &amp; i do this work in yuor condition &amp; in your budget so what you say dear</text>
+      <attachmentlink />
+    </message>
+  </items>
+</xml-result>

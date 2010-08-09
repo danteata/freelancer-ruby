@@ -1,20 +1,18 @@
 module Freelancer
   module Models
-    class JobCategory < Base
-  
-      # Basic category fields
-      attr_accessor :category_id, :name, :project_count, :seo_url
+    class JobCategory
 
-      # Map this data model from/to a JSON structure
-      json_structure do
-        
-        map :category_id, :id
-        map :name, :name
-        map :project_count, :project_count
-        map :seo_url, :seo_url
+      include JSONMapper
 
-      end
+      # The id of the category
+      json_attribute :id, Integer
+
+      # The name of the category
+      json_attribute :name, String
+
+      # The list of jobs associated with the category
+      json_attributes :jobs, :job, Job
 
     end
-  end  
+  end
 end

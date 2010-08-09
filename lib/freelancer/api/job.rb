@@ -2,24 +2,44 @@ module Freelancer
   module API
     module Job
       module InstanceMethods
-        
-        # Get a list of job categories
-        def job_categories
-          
+
+        # Retrieve a list of available jobs
+        def jobs
+
           result = api_get("/Job/getJobList.json")
-          categories = []
-          
-          # Fetch categories from the result set
-          if result.keys.first == :"xml-result" && result[:"xml-result"].key?(:items) && result[:"xml-result"][:items].is_a?(Array)
-            result[:"xml-result"][:items].each do |item|
-              categories << Models::JobCategory.from_json(item)
-            end
-          end
-          
-          categories
+          ::Freelancer::Models::Job.parse_collection(result, :shift => [ :"json-result", :items ])
           
         end
-        
+
+        # Retrieve a list of available job categories
+        def job_categories
+          
+          result = api_get("/Job/getCategoryJobList.json")
+          ::Freelancer::Models::JobCategory.parse_collection(result, :shift => [ :"json-result", :items, :category ])
+
+        end
+
+        # Retrieve a list of the current users jobs
+        def my_jobs
+          
+          result = api_get("/Job/getMyJobList.json")
+
+          # We need to hack this to make the job id a sub element of the
+          # job node to make the mapping work properly.
+          json_result = JSONMapper::Parser.parse(result)
+          jobs = []
+          unless json_result.nil?
+
+            json_result[:"json-result"][:items][:job].each do |item|
+              jobs << { :id => item }
+            end
+
+          end
+
+          ::Freelancer::Models::Job.parse_json_collection(jobs)
+
+        end
+
       end
     end
   end

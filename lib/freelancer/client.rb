@@ -8,7 +8,13 @@ module Freelancer
     api API::Job
     api API::Profile
     api API::Employer
-    
+    api API::Freelancer
+    api API::Common
+    api API::Payment
+    api API::Notification
+    api API::Project
+    api API::Message
+
     attr_reader :consumer_token, :consumer_secret, :consumer_options
     
     # Initialize a new Freelancer API client
@@ -24,7 +30,7 @@ module Freelancer
       
       @consumer_token, @consumer_secret, @consumer_options = consumer_token, consumer_secret, consumer_options.merge(default_options)
       @api_endpoint = "http://api.sandbox.freelancer.com"
-
+    
     end
     
     # Get the current oAuth consumer instance
@@ -66,7 +72,7 @@ module Freelancer
     def api_get(method, options = {})
       response = access_token.get(to_uri(method, options))
       raise_api_errors!(response)
-      JSON.parse(html_decode(response.body), { :symbolize_names => true })
+      return response.body
     end
     
     # Execute a GET-requset for the specified API method and return the raw
@@ -84,8 +90,19 @@ module Freelancer
       response = access_token.post(method, body)
       response.body
     end
-    
+
     private
+
+    # Extract params from an array of arguments. Copied from ActiveSupport.
+    def extract_params(args)
+      args.last.is_a?(Hash) ? args.last : {}
+    end
+
+    # Build a hash of parameters based on the arguments, stripping out any blank
+    # arguments.
+    def build_api_params(params)
+      params.reject { |key, value| value.nil? || value == "" }
+    end
     
     # Clear the current oAuth request token
     def clear_request_token

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>2</count>
+  <items>
+    <feedback>
+      <projectid>658116</projectid>
+      <userid>1619638</userid>
+      <username>lsy003</username>
+      <rateuntil>2010-09-14 01:55:08</rateuntil>
+      <status>Unpaid</status>
+    </feedback>
+    <feedback>
+      <projectid>658028</projectid>
+      <userid>1619638</userid>
+      <username>lsy003</username>
+      <rateuntil>2010-09-14 01:31:01</rateuntil>
+      <status>Paid</status>
+    </feedback>
+  </items>
+</xml-result>

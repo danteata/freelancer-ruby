@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>4</count>
+  <items>
+    <message>
+      <id>13156760</id>
+      <projectid>585507</projectid>
+      <fromusername>lishengYul</fromusername>
+      <fromuserid>1346994</fromuserid>
+      <tousername>lyux</tousername>
+      <touserid>1289625</touserid>
+      <datetime>2010-01-08 02:45:05</datetime>
+      <text>Message text 1</text>
+      <new>0</new>
+      <attachmentlink />
+    </message>
+    <message>
+      <id>13156757</id>
+      <projectid>585507</projectid>
+      <fromusername>lishengYul</fromusername>
+      <fromuserid>1346994</fromuserid>
+      <tousername>lyux</tousername>
+      <touserid>1289625</touserid>
+      <datetime>2010-01-08 02:45:02</datetime>
+      <text>Message text 2</text>
+      <new>0</new>
+      <attachmentlink />
+    </message>
+    <message>
+      <id>13156140</id>
+      <projectid>585507</projectid>
+      <fromusername>lyux</fromusername>
+      <fromuserid>1289625</fromuserid>
+      <tousername>lishengYul</tousername>
+      <touserid>1346994</touserid>
+      <datetime>2010-01-08 01:58:19</datetime>
+      <text>Message text 3</text>
+      <new>0</new>
+      <attachmentlink />
+    </message>
+    <message>
+      <id>13156123</id>
+      <projectid>585507</projectid>
+      <fromusername>lyux</fromusername>
+      <fromuserid>1289625</fromuserid>
+      <tousername>lishengYul</tousername>
+      <touserid>1346994</touserid>
+      <datetime />
+      <text>Message text 4</text>
+      <new>0</new>
+      <attachmentlink />
+    </message>
+  </items>
+</xml-result>

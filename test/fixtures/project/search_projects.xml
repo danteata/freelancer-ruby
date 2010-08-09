@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>3</count>
+  <items>
+    <project>
+      <projectid>589171</projectid>
+      <projectname>rick+2 project 8</projectname>
+      <bids>0</bids>
+      <averagebid />
+      <jobtypecsv>.NET</jobtypecsv>
+      <startdate>2010-03-23 22:53:15</startdate>
+      <timeleft>44 days and 2 hours</timeleft>
+      <projecturl>http://www.lisheng.staging.getafreelancer.com/projects/589171.html</projecturl>
+    </project>
+    <project>
+      <projectid>589143</projectid>
+      <projectname>wxc2008 project 13</projectname>
+      <bids>0</bids>
+      <averagebid />
+      <jobtypecsv>.NET,Java</jobtypecsv>
+      <startdate>2010-03-22 02:14:29</startdate>
+      <timeleft>42 days and 5 hours</timeleft>
+      <projecturl>http://www.lisheng.staging.getafreelancer.com/projects/Java-NET/wxc-project.html</projecturl>
+    </project>
+    <project>
+      <projectid>589125</projectid>
+      <projectname>wxc2008 project 12</projectname>
+      <bids>0</bids>
+      <averagebid />
+      <jobtypecsv>.NET</jobtypecsv>
+      <startdate>2010-03-22 02:10:18</startdate>
+      <timeleft>42 days and 5 hours</timeleft>
+      <projecturl>http://www.lisheng.staging.getafreelancer.com/projects/589125.html</projecturl>
+    </project>
+  </items>
+  <results_count>144</results_count>
+</xml-result>

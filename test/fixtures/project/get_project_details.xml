@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <id>588582</id>
+  <name>sign design web software</name>
+  <url>
+    http://www.sandbox.freelancer.com/projects/PHP-ASP/sign-design-web-software.html
+  </url>
+  <start_unixtime>1263332216</start_unixtime>
+  <start_date>2010-01-12 16:36:56</start_date>
+  <end_unixtime>1263591416</end_unixtime>
+  <end_date>2010-01-12 16:36:56</end_date>
+  <buyer>
+    <url>
+      http://www.sandbox.freelancer.com/users/1353095.html
+    </url>
+    <id>1353095</id>
+    <username>billk89</username>
+  </buyer>
+  <state>C</state>
+  <short_descr>
+    Create and upload sign design web software for our client nlsigndesign.com
+    Public internet users must be able to create there own signs online, then save and submit as a file.
+    Features must be the same as buildasign.com or very close.
+    Our servers run either Linux or windows. they are using aspx but what ever works.
+  </short_descr>
+  <options>
+    <featured>1</featured>
+    <nonpublic>0</nonpublic>
+    <trial>0</trial>
+    <fulltime>0</fulltime>
+    <for_gold_members>0</for_gold_members>
+    <hidden_bids>0</hidden_bids>
+  </options>
+  <budget>
+    <min>750</min>
+    <max>1500</max>
+  </budget>
+  <jobs>
+    <job>.NET</job>
+    <job>ASP</job>
+    <job>Javascript</job>
+    <job>JSP</job>
+    <job>PHP</job>
+  </jobs>
+  <bid_stats>
+
+    <count>9</count>
+    <avg>1350</avg>
+  </bid_stats>
+  <addtional_descr>
+    <id>51764</id>
+    <project_id>658356</project_id>
+    <submitdate>2010-05-13 20:10:46</submitdate>
+    <descr>additional information</descr>
+    <submitdate_f>Today</submitdate_f>
+    <submitdate_full>05/13/2010 at 20:10 EDT</submitdate_full>
+    <descr_html>additional information</descr_html>
+  </addtional_descr>
+  <seller>
+    <id>54403</id>
+    <username>aamiriqbal</username>
+    <awardStatus>awarded</awardStatus>
+  </seller>
+  <seller>
+    <id>140002</id>
+    <username>becomeexpert</username>
+    <awardStatus>pending</awardStatus>
+  </seller>
+  <additional_files>
+    <id>1</id>
+    <project_id>658356</project_id>
+    <name>frame002.gif</name>
+    <submitdate>2010-05-12 13:29:53</submitdate>
+    <submitdate_f>05-12-2010</submitdate_f>
+    <submitdate_full>05/12/2010 at 13:29 UTC</submitdate_full>
+    <full_file_url>http://data.sandbox.freelancer.com/project/10/frame002.gif</full_file_url>
+  </additional_files>
+</xml-result>

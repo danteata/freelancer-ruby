@@ -22,14 +22,13 @@ A Ruby gem for working with the new Freelancer.com API.
 
 == Issues and missing features
 
-* The User API is missing support for feedbacks and insignias.
-* The Employer API is not implemented yet.
-* The Freelancer API is not implemented yet.
-* The Common API is not implemented yet.
-* The Payments API is not implemented yet.
-* The Notifications API is not implemented yet.
-* The Project API is not implemented yet.
-* The Message API is not implemented yet.
+* The Profile API is missing support for SetProfileInfo.
+* The Employer API is missing support for PostNewProject, PostNewTrialProject, PostNewDraftProject, ChooseWinnerForProject, InviteUserForProject, UpdateProjectDetails, PublishDraftProject, UpgradeTrialProject and DeleteDraftProject.
+* The Freelancer API is missing support for PlaceBidOnProject, RetractBidFromProject and AcceptBidWon.
+* The Common API is missing support for RequestCancelProject, PostFeedback, PostReplyForFeedback and RequestWithdrawFeedback.
+* The Payment API is missing support for RequestWithdrawal, CreateMilestonePayment, TransferMoney, RequestCancelWithdrawal, CancelMilestone, RequestReleaseMilestone, ReleaseMilestone and PrepareTransfer.
+* The Project API is missing support for PostPublicMessage.
+* The Message API is missing support for SendMessage and MarkMessageAsRead.
 
 == Usage
 

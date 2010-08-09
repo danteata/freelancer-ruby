@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<User>
+  <Userid>1353594</Userid>
+  <totalreviews>
+    <totalcounts>3</totalcounts>
+    <item>
+      <reviewername>shaneyls</reviewername>
+      <revieweruserid>1289625</revieweruserid>
+      <projectname>test for milestone payment XI</projectname>
+      <projectid>588920</projectid>
+      <winnerbid>250</winnerbid>
+      <reviewdate>2010-02-04 23:49:20</reviewdate>
+      <rating>10</rating>
+      <commenttext>Comment Text</commenttext>
+      <userreplyoncomment/>
+    </item>
+    <item>
+      <reviewername>shaneyls</reviewername>
+      <revieweruserid>1289625</revieweruserid>
+      <projectname>Deleted project #588917</projectname>
+      <projectid>588917</projectid>
+      <winnerbid>250</winnerbid>
+      <reviewdate>2010-02-04 22:10:31</reviewdate>
+      <rating>10</rating>
+      <commenttext>Sample comment</commenttext>
+      <userreplyoncomment/>
+    </item>
+    <item>
+      <reviewername>shaneyls</reviewername>
+      <revieweruserid>1289625</revieweruserid>
+      <projectname>Deleted project #588916</projectname>
+      <projectid>588916</projectid>
+      <winnerbid>250</winnerbid>
+      <reviewdate>2010-02-04 21:54:44</reviewdate>
+      <rating>10</rating>
+      <commenttext>Sample comment</commenttext>
+      <userreplyoncomment/>
+    </item>
+  </totalreviews>
+  <insignia>
+    <item>
+      <insignianame>logo-g</insignianame>
+      <insigniadesc>Grandmaster Logo Designer</insigniadesc>
+    </item>
+    <item>
+      <insignianame>freelancer-white</insignianame>
+      <insigniadesc>The Freelancer.com Quartermaster</insigniadesc>
+    </item>
+    <item>
+      <insignianame>freelancer-black</insignianame>
+      <insigniadesc>Freelancer.com Admin</insigniadesc>
+    </item>
+    <item>
+      <insignianame>UKmember</insignianame>
+      <insigniadesc>Foundation Freelancer.co.uk Member</insigniadesc>
+    </item>
+  </insignia>
+</User>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <username>apx</username>
+  <userid>1239144</userid>
+  <profiletext />
+  <vision />
+  <keywords />
+  <hourlyrate>50</hourlyrate>
+  <qualificationcsv>PHP,C Programming,Project Management,iPhone,Cloud Computing,Algorithm,Objective C,MySQL</qualificationcsv>
+  <openBuyerProjectList>
+    <project>
+      <id>658088</id>
+      <name>Luke: project to bid on</name>
+      <url>http://www.sandbox.freelancer.com/iPhone/Luke-project-bid.html</url>
+    </project>
+    <project>
+      <id>658087</id>
+      <name>Luke: project posted form iPhone. Minimum details</name>
+      <url>http://www.sandbox.freelancer.com/Luke-project-posted-form-iPhone.html</url>
+    </project>
+    <project>
+      <id>658086</id>
+      <name>Luke: project x [qwerty]</name>
+      <url>http://www.sandbox.freelancer.com/iPhone/Luke-project-qwerty.html</url>
+    </project>
+  </openBuyerProjectList>
+  <closeBuyerProjectList>
+    <project>
+      <id>553893</id>
+      <name>Photography Portfolio Website (Read Carefully)</name>
+      <url>http://www.sandbox.freelancer.com/AJAX/Photography-Portfolio-Website-Read.html</url>
+    </project>
+    <project>
+      <id>553312</id>
+      <name>Photography Portfolio Website</name>
+      <url>http://www.sandbox.freelancer.com/Javascript-Website-Design/Photography-Portfolio-Website.html</url>
+    </project>
+  </closeBuyerProjectList>
+  <frozenBuyerProjectList>
+    <project>
+      <id>641194</id>
+      <name>Retrieve My Twitter Name</name>
+      <url>http://www.sandbox.freelancer.com/641194.html</url>
+    </project>
+  </frozenBuyerProjectList>
+  <bidSellerProjectList>
+    <project>
+      <id>658013</id>
+      <name>Messenger for iPhone</name>
+      <url>http://www.sandbox.freelancer.com/Java-iPhone/Messenger-for-iPhone</url>
+    </project>
+  </bidSellerProjectList>
+</xml-result>

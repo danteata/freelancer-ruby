@@ -1,6 +1,6 @@
 require "oauth"
-require "json/ext"
 require "htmlentities"
+require "json_mapper"
 
 module Freelancer
   
@@ -14,19 +14,37 @@ module Freelancer
     autoload :Job, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "job")
     autoload :Profile, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "profile")
     autoload :Employer, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "employer")
+    autoload :Freelancer, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "freelancer")
+    autoload :Common, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "common")
+    autoload :Payment, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "payment")
+    autoload :Notification, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "notification")
+    autoload :Project, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "project")
+    autoload :Message, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api", "message")
   end
   
   module Models
-    autoload :Base, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "base")
+    autoload :Address, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "address")
+    autoload :Rating, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "rating")
+    autoload :NotificationStatus, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "notification_status")
     autoload :User, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "user")
+    autoload :Review, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "review")
     autoload :JobCategory, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "job_category")
-    autoload :Account, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "account")
-    autoload :ProjectAssociation, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_association")
+    autoload :Job, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "job")
     autoload :Project, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project")
-  end
-  
-  module Support
-    autoload :JSONMapper, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "support", "json_mapper")
+    autoload :Eligibility, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "eligibility")
+    autoload :ConfigVersion, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "config_version")
+    autoload :Balance, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "balance")
+    autoload :Transaction, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "transaction")
+    autoload :Milestone, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "milestone")
+    autoload :Withdrawal, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "withdrawal")
+    autoload :WithdrawalFee, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "withdrawal_fee")
+    autoload :Notification, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "notification")
+    autoload :News, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "news")
+    autoload :ProjectFee, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_fee")
+    autoload :ProjectOptions, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_options")
+    autoload :Bid, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "bid")
+    autoload :Message, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "message")
+    autoload :ProjectBudget, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_budget")
   end
   
 end

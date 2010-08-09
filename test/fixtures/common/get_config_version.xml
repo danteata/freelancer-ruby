@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <function>withdrawalfee</function>
+  <version>3</version>
+</xml-result>

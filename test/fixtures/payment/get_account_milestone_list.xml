@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>3</count>
+  <items>
+    <milestone>
+      <id>2764466</id>
+      <username>shaneyls</username>
+      <date>2010-02-03 19:45:46</date>
+      <projectid>588911</projectid>
+      <projectname>test for milestone payment II</projectname>
+      <reason>Full payment for completed project</reason>
+    </milestone>
+    <milestone>
+      <id>2765067</id>
+      <username>lsy003</username>
+      <date>2010-04-07 03:02:54</date>
+      <projectid>589075</projectid>
+      <projectname>test for bidding</projectname>
+      <reason>Full payment for completed project</reason>
+    </milestone>
+    <milestone>
+      <id>2765068</id>
+      <username>lsy003</username>
+      <date>2010-04-07 03:05:19</date>
+      <projectid>589075</projectid>
+      <projectname>test for bidding</projectname>
+      <reason>Full payment for completed project</reason>
+    </milestone>
+  </items>
+</xml-result>

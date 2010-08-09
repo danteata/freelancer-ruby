@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>5</count>
+  <items>
+    <transaction>
+      <balanceamount>-200</balanceamount>
+      <transtext>Transfer to shaneyls for project test project 1 posted by API curl (Partial payment for project)</transtext>
+      <textlinks>
+        <userlink>http://www.sandbox.freelancer.com/users/1289625.html</userlink>
+        <projectlink>http://www.sandbox.freelancer.com/projects/658026.html</projectlink>
+      </textlinks>
+      <transactionid>3165579</transactionid>
+      <transdatetime>2010-04-26 20:30:00</transdatetime>
+    </transaction>
+    <transaction>
+      <balanceamount>-5.5</balanceamount>
+      <transtext>Project fee taken (project for lsy001)</transtext>
+      <textlinks>
+        <projectlink>http://www.sandbox.freelancer.com/projects/658031.html</projectlink>
+      </textlinks>
+      <transactionid>3165258</transactionid>
+      <transdatetime>2010-04-15 01:11:03</transdatetime>
+      <linkinvoice>http://www.sandbox.freelancer.com/payments/print-invoice.php?invoice=3165258</linkinvoice>
+    </transaction>
+    <transaction>
+      <balanceamount>-5.5</balanceamount>
+      <transtext>Refundable project fee taken (test project 33 posted by API curl)</transtext>
+      <textlinks>
+        <projectlink>http://www.sandbox.freelancer.com/projects/658030.html</projectlink>
+      </textlinks>
+      <transactionid>3165242</transactionid>
+      <transdatetime>2010-04-14 20:36:05</transdatetime>
+      <linkinvoice>http://www.sandbox.freelancer.com/payments/print-invoice.php?invoice=3165242</linkinvoice>
+    </transaction>
+    <transaction>
+      <balanceamount>-80</balanceamount>
+      <transtext>Milestone Payment to shaneyls for project test project 1 posted by API curl (Full payment for completed project)</transtext>
+      <textlinks>
+        <userlink>http://www.sandbox.freelancer.com/users/1289625.html</userlink>
+        <projectlink>http://www.sandbox.freelancer.com/projects/658026.html</projectlink>
+      </textlinks>
+      <transactionid>3165210</transactionid>
+      <transdatetime>2010-04-14 00:57:42</transdatetime>
+    </transaction>
+    <transaction>
+      <balanceamount>-80</balanceamount>
+      <transtext>Milestone Payment to shaneyls for project test project 1 posted by API curl (Full payment for completed project)</transtext>
+      <textlinks>
+        <userlink>http://www.sandbox.freelancer.com/users/1289625.html</userlink>
+        <projectlink>http://www.sandbox.freelancer.com/projects/658026.html</projectlink>
+      </textlinks>
+      <transactionid>3165205</transactionid>
+      <transdatetime>2010-04-14 00:51:54</transdatetime>
+    </transaction>
+  </items>
+</xml-result>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-result xmlns="http://api.freelancer.com/schemas/xml-0.1">
+  <count>5</count>
+  <items>
+    <fees>
+      <projecttype>featured_create</projecttype>
+      <projectdesc>Featured projects get lots more bids, and tend to get more experienced, higher quality freelancers bidding! They have high visibility, are listed on the main page and multiple other pages</projectdesc>
+      <projectfees>19</projectfees>
+    </fees>
+    <fees>
+      <projecttype>nonpublic_create</projecttype>
+      <projectdesc>Hide project details from search engines and users that are not logged in</projectdesc>
+      <projectfees>3</projectfees>
+    </fees>
+    <fees>
+      <projecttype>hidden_bids</projecttype>
+      <projectdesc>Hide all bids on my project from other users. To view bids you must login.</projectdesc>
+      <projectfees>1</projectfees>
+    </fees>
+    <fees>
+      <projecttype>post_project</projecttype>
+      <projectdesc>This fee is refunded as soon as provider accepts to do a project OR when the project is cancelled properly.</projectdesc>
+      <projectfees>5</projectfees>
+    </fees>
+    <fees>
+      <projecttype>fulltime_create</projecttype>
+      <projectdesc>No other fees are charged to employers or workers, including project comissions. Most buyers will save a lot of money with this option</projectdesc>
+      <projectfees>99.95</projectfees>
+    </fees>
+  </items>
+</xml-result>
