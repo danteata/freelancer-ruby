@@ -2,8 +2,7 @@ source :rubygems
 
 gem "oauth", ">= 0.4.0"
 gem "htmlentities", ">= 4.2.1"
-# gem "json_mapper", ">= 0.1.1"
-gem "json_mapper", :path => "/home/trond/Code/Projects/JSONMapper"
+gem "json_mapper", ">= 0.2.0"
 
 group :development do
   gem "jeweler"
