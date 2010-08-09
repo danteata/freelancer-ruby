@@ -11,7 +11,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "Freelancer API"
   gem.description = "Ruby gem implementation of the Freelancer.com API"
   gem.email = "tanordheim@gmail.com"
-  gem.homepage = "http://github.com/tanordheim/freelancer"
+  gem.homepage = "http://github.com/tanordheim/freelancer-ruby"
   gem.authors = [ "Trond Arve Nordheim" ]
   
   gem.add_bundler_dependencies
