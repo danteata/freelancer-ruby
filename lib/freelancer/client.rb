@@ -15,21 +15,24 @@ module Freelancer
     api API::Project
     api API::Message
 
-    attr_reader :consumer_token, :consumer_secret, :consumer_options
+    attr_reader :consumer_token, :consumer_secret, :consumer_options, :sandbox_mode
     
     # Initialize a new Freelancer API client
-    def initialize(consumer_token, consumer_secret, consumer_options = {})
-      
+    def initialize(consumer_token, consumer_secret, *args)
+
+      options = extract_params(args)
+      @sandbox_mode = options.delete(:sandbox) || false
+
       default_options = {
         :request_token_path => "/RequestRequestToken/requestRequestToken.xml",
-        :authorize_url => "http://www.sandbox.freelancer.com/users/api-token/auth.php",
+        :authorize_url => site_url("/users/api-token/auth.php"),
         :access_token_path => "/RequestAccessToken/requestAccessToken.xml",
         :scheme => :query_string,
         :http_method => :get
       }
       
-      @consumer_token, @consumer_secret, @consumer_options = consumer_token, consumer_secret, consumer_options.merge(default_options)
-      @api_endpoint = "http://api.sandbox.freelancer.com"
+      @consumer_token, @consumer_secret, @consumer_options = consumer_token, consumer_secret, options.merge(default_options)
+      @api_endpoint = api_url
     
     end
     
@@ -84,6 +87,16 @@ module Freelancer
     end
     
     private
+
+    # Get the URL to a specific site path
+    def site_url(path = "")
+      self.sandbox_mode == true ? "http://www.sandbox.freelancer.com#{path}" : "http://www.freelancer.com#{path}"
+    end
+
+    # Get the URL to a specific api path
+    def api_url(path = "")
+      self.sandbox_mode == true ? "http://api.sandbox.freelancer.com#{path}" : "http://api.freelancer.com#{path}"
+    end
 
     # Extract params from an array of arguments. Copied from ActiveSupport.
     def extract_params(args)

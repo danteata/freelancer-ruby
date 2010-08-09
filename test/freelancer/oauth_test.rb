@@ -30,13 +30,19 @@ class OAuthTest < Test::Unit::TestCase
   
     end
     
-    should "set authorize url to 'http://www.sandbox.freelancer.com/users/api-token/auth.php' by default" do
+    should "set authorize url to 'http://www.sandbox.freelancer.com/users/api-token/auth.php' by default when in sandbox mode" do
   
-      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
+      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret", :sandbox => true)
       freelancer.consumer.options[:authorize_url].should == "http://www.sandbox.freelancer.com/users/api-token/auth.php"
   
     end
     
+    should "set authorize url to 'http://www.freelancer.com/users/api-token/auth.php' by default when in normal mode" do
+  
+      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
+      freelancer.consumer.options[:authorize_url].should == "http://www.freelancer.com/users/api-token/auth.php"
+  
+    end
     should "set access token path to '/RequestAccessToken/requestAccessToken.xml' by default" do
   
       freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
@@ -49,7 +55,7 @@ class OAuthTest < Test::Unit::TestCase
       consumer = mock("oauth consumer")
       OAuth::Consumer.expects(:new).with("consumer_token", "consumer_secret", @consumer_options).returns(consumer)
       
-      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
+      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret", :sandbox => true)
       freelancer.consumer.should == consumer
   
     end
@@ -61,7 +67,7 @@ class OAuthTest < Test::Unit::TestCase
       consumer.expects(:get_request_token).returns(request_token)
       OAuth::Consumer.expects(:new).with("consumer_token", "consumer_secret", @consumer_options).returns(consumer)
       
-      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
+      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret", :sandbox => true)
       freelancer.request_token.should == request_token
   
     end
@@ -72,7 +78,7 @@ class OAuthTest < Test::Unit::TestCase
       request_token = mock("request token")
       OAuth::Consumer.expects(:new).with("consumer_token", "consumer_secret", @consumer_options).returns(consumer)
       
-      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret")
+      freelancer = Freelancer::Client.new("consumer_token", "consumer_secret", :sandbox => true)
       consumer.expects(:get_request_token).with({ :oauth_callback => "http://foo.bar.com/oauth_callback" })
       freelancer.set_callback_url("http://foo.bar.com/oauth_callback")
       

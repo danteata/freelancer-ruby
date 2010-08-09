@@ -17,7 +17,7 @@ A Ruby gem for working with the new Freelancer.com API.
 
 * oAuth authentication.
 * Support for all Freelancer.com APIs.
-* Per-environment configuration and sandboxing.
+* Sandbox support.
 * Ruby on Rails support (via separate project {freelancer-rails}[http://github.com/tanordheim/freelancer-rails])
 
 == Issues and missing features
