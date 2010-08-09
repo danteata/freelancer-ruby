@@ -1,3 +1,4 @@
 .document
 Gemfile.lock
 pkg
+rdoc
