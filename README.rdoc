@@ -16,9 +16,8 @@ A Ruby gem for working with the new Freelancer.com API.
 == Features
 
 * oAuth authentication.
-* User API support.
-* Job API support.
-* Profile API support.
+* Support for all Freelancer.com APIs.
+* Per-environment configuration and sandboxing.
 
 == Issues and missing features
 
