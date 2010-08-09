@@ -83,6 +83,48 @@ module Freelancer
           
         end
 
+        # Send a private message to another user
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to send message for
+        #   - text: the text of the message to send
+        #   - user_id: the id of the user to send the message to
+        #   - username: the username of the user to send the message to
+        def send_message(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Message/sendMessage.json", build_api_params({
+            :projectid => params[:project_id],
+            :messagetext => params[:text],
+            :userid => params[:user_id],
+            :username => params[:username]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Mark a message as read
+        #
+        # Valid parameters are:
+        #   - message_id: the id of the message to mark as read
+        def mark_message_as_read(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Message/markMessageAsRead.json", build_api_params({
+            :id => params[:message_id]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+
+        end
+
       end
     end
   end

@@ -52,6 +52,104 @@ module Freelancer
           
         end
 
+        # Request to cancel an awarded project
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to cancel
+        #   - selected_winner: the id of the selected winner of the project
+        #   - comment: the comment for the cancellation request
+        #   - reason: the reason for cancelling the project
+        #   - followed_guidelines: if the guidelines for cancelling the project has been followed
+        def request_cancel_project(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Common/requestCancelProject.json", build_api_params({
+            :projectid => params[:project_id],
+            :selectedwinner => params[:selected_winner],
+            :commenttext => params[:comment],
+            :reasoncancellation => params[:reason],
+            :followedguidelinesstatus => params[:followed_guidelines]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Post feedback for a user
+        #
+        # Valid parameters are:
+        #   - project_id: the project id related to the feedback
+        #   - user_id: the id of the user to rate
+        #   - username: the username of the user to rate
+        #   - comment: the feedback comment
+        #   - rating: the feedback rating
+        def post_feedback(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Common/postFeedback.json", build_api_params({
+            :projectid => params[:project_id],
+            :userid => params[:user_id],
+            :username => params[:username],
+            :feedbacktext => params[:comment],
+            :rating => params[:rating]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Post reply to a feedback given to you
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project related to the feedback
+        #   - user_id: the id of the user to reply to
+        #   - username: the username of the user to reply to
+        #   - comment: the feedback comment
+        def post_feedback_reply(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Common/postReplyForFeedback.json", build_api_params({
+            :projectid => params[:project_id],
+            :userid => params[:user_id],
+            :username => params[:username],
+            :feedbacktext => params[:comment]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Request that posted feedback is withdrawn
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project related to feedback
+        #   - user_id: the user id the feedback is posted to
+        #   - username: the username the feedback is posted to
+        def request_withdraw_feedback(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Common/requestWithdrawFeedback.json", build_api_params({
+            :projectid => params[:project_id],
+            :userid => params[:user_id],
+            :username => params[:username]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
       end
     end
   end

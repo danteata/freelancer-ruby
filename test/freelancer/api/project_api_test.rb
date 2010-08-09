@@ -224,6 +224,25 @@ class ProjectApiTest < Test::Unit::TestCase
 
     end
 
+    context "post public message" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Project/postPublicMessage.json", { :projectid => 1, :messagetext => "Test" })
+        @freelancer.post_public_project_message(:project_id => 1, :message => "Test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Project/postPublicMessage.json", "status_confirmation.json")
+        status = @freelancer.post_public_project_message
+        status.success?.should == true
+
+      end
+
+    end
+
   end
 
 end

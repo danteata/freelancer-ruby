@@ -117,6 +117,190 @@ module Freelancer
           
         end
 
+        # Request withdrawal of funds
+        #
+        # Valid parameters are:
+        #   - amount: the amount of money to withdraw
+        #   - method: the withdrawal method (paypal, moneybooker, wire, paynoneer)
+        #   - wire_comment: withdrawal comment for wire transfer
+        #   - paypal_email: paypal account to withdraw to
+        #   - moneybooker_account: moneybooker account to withdraw to
+        #   - description: description for wire transfer withdrawal
+        #   - country_code: country code for wire transfer withdrawal
+        def request_withdrawal(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/requestWithdrawal.json", build_api_params({
+            :amount => params[:amount],
+            :method => params[:method],
+            :additionaltext => params[:wire_comment],
+            :paypalemail => params[:paypal_email],
+            :mb_account => params[:moneybooker_account],
+            :description => params[:description],
+            :country_code => params[:country_code]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Create a new milestone payment
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to create the payment for
+        #   - amount: the amount of money to add to the milestone payment
+        #   - user_id: the id of the user to make out the payment to
+        #   - username: the username of the user to make out the payment to
+        #   - comment: the comment of the payment
+        #   - type: the milestone payment type (partial, full or other)
+        def create_milestone_payment(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/createMilestonePayment.json", build_api_params({
+            :projectid => params[:project_id],
+            :amount => params[:amount],
+            :touserid => params[:user_id],
+            :tousername => params[:username],
+            :reasontext => params[:comment],
+            :reasontype => params[:type]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Transfer money to another user
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to transfer money for
+        #   - amount: the amount of money to transfer
+        #   - user_id: the id of the user to transfer the money to
+        #   - username: the username of the user to transfer the money to
+        #   - comment: the comment of the transfer
+        #   - type: the transfer type (partial, full or other)
+        def transfer_money(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/transferMoney.json", build_api_params({
+            :projectid => params[:project_id],
+            :amount => params[:amount],
+            :touserid => params[:user_id],
+            :tousername => params[:username],
+            :reasontext => params[:comment],
+            :reasontype => params[:type]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Cancel a money withdrawal request
+        #
+        # Valid parameters are:
+        #   - withdrawal_id: the id of the withdrawal to cancel
+        def cancel_withdrawal(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/requestCancelWithdrawal.json", build_api_params({
+            :withdrawalid => params[:withdrawal_id]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Cancel a milestone payment
+        #
+        # Valid parameters are:
+        #   - transaction_id: the id of the milestone transaction to cancel
+        def cancel_milestone(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/cancelMilestone.json", build_api_params({
+            :transactionid => params[:transaction_id]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Request to release a milestone payment
+        #
+        # Valid parameters are:
+        #   - transaction_id: the id of the milestone transaction to release
+        def request_release_milestone(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/requestReleaseMilestone.json", build_api_params({
+            :transactionid => params[:transaction_id]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Release a milestone payment
+        #
+        # Valid parameters are:
+        #   - transaction_id: the id of the milestone transaction to release
+        #   - full_name: the full name of the payer (signature)
+        def release_milestone(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/releaseMilestone.json", build_api_params({
+            :transactionid => params[:transaction_id],
+            :fullname => params[:full_name]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
+        # Prepare a transfer to validate it before actually transfering
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to transfer money for
+        #   - amount: the amount of money to transfer
+        #   - user_id: the id of the user to transfer money to
+        #   - type: the type of transfer (partial, full or other)
+        def prepare_transfer(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Payment/prepareTransfer.json", build_api_params({
+            :projectid => params[:project_id],
+            :amount => params[:amount],
+            :touserid => params[:user_id],
+            :reasontype => params[:type]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
       end
     end
   end

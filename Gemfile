@@ -2,7 +2,7 @@ source :rubygems
 
 gem "oauth", ">= 0.4.0"
 gem "htmlentities", ">= 4.2.1"
-gem "json_mapper", ">= 0.2.0"
+gem "json_mapper", ">= 0.2.1"
 
 group :development do
   gem "jeweler", ">= 1.4.0"

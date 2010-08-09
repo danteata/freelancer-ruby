@@ -128,7 +128,7 @@ module Freelancer
       unless options.nil? || options.empty?
         uri.query = to_query(options)
       end
-      
+
       return uri.to_s
       
     end

@@ -220,6 +220,174 @@ class PaymentApiTest < Test::Unit::TestCase
 
     end
 
-  end
+    context "request fund withdrawal" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/requestWithdrawal.json", { :amount => 100, :method => "paypal", :paypalemail => "test@test.com" })
+        @freelancer.request_withdrawal(:amount => 100, :method => "paypal", :paypal_email => "test@test.com")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/requestWithdrawal.json", "payment/request_withdrawal.json")
+        status = @freelancer.request_withdrawal
+        status.success?.should == true
+        status.status.should == "Delayed"
+        status.charges.should == 1
+
+      end
+
+    end
+
+    context "create milestone payment" do
+
+      should "create milestone payment by user id" do
+
+        @freelancer.expects(:api_get).with("/Payment/createMilestonePayment.json", { :projectid => 1, :amount => 100, :touserid => 1, :reasontext => "Test", :reasontype => "partial" })
+        @freelancer.create_milestone_payment(:project_id => 1, :amount => 100, :user_id => 1, :comment => "Test", :type => "partial")
+
+      end
+
+      should "create milestone payment by username" do
+
+        @freelancer.expects(:api_get).with("/Payment/createMilestonePayment.json", { :projectid => 1, :amount => 100, :tousername => "test", :reasontext => "Test", :reasontype => "partial" })
+        @freelancer.create_milestone_payment(:project_id => 1, :amount => 100, :username => "test", :comment => "Test", :type => "partial")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/createMilestonePayment.json", "status_confirmation.json")
+        status = @freelancer.create_milestone_payment
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "transfer money" do
+
+      should "transfer money by user id" do
+
+        @freelancer.expects(:api_get).with("/Payment/transferMoney.json", { :projectid => 1, :amount => 100, :touserid => 1, :reasontext => "Test", :reasontype => "partial" })
+        @freelancer.transfer_money(:project_id => 1, :amount => 100, :user_id => 1, :comment => "Test", :type => "partial")
+
+      end
+
+      should "transfer money by username" do
+
+        @freelancer.expects(:api_get).with("/Payment/transferMoney.json", { :projectid => 1, :amount => 100, :tousername => "test", :reasontext => "Test", :reasontype => "partial" })
+        @freelancer.transfer_money(:project_id => 1, :amount => 100, :username => "test", :comment => "Test", :type => "partial")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/transferMoney.json", "status_confirmation.json")
+        status = @freelancer.transfer_money
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "cancel withdrawal request" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/requestCancelWithdrawal.json", { :withdrawalid => 1 })
+        @freelancer.cancel_withdrawal(:withdrawal_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/requestCancelWithdrawal.json", "status_confirmation.json")
+        status = @freelancer.cancel_withdrawal
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "cancel milestone payment" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/cancelMilestone.json", { :transactionid => 1 })
+        @freelancer.cancel_milestone(:transaction_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/cancelMilestone.json", "status_confirmation.json")
+        status = @freelancer.cancel_milestone
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "request milestone release" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/requestReleaseMilestone.json", { :transactionid => 1 })
+        @freelancer.request_release_milestone(:transaction_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/requestReleaseMilestone.json", "status_confirmation.json")
+        status = @freelancer.request_release_milestone
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "release milestone" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/releaseMilestone.json", { :transactionid => 1, :fullname => "Test Name" })
+        @freelancer.release_milestone(:transaction_id => 1, :full_name => "Test Name")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/releaseMilestone.json", "status_confirmation.json")
+        status = @freelancer.release_milestone
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "prepare transfer" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Payment/prepareTransfer.json", { :projectid => 1, :amount => 100, :touserid => 1, :reasontype => "partial" })
+        @freelancer.prepare_transfer(:project_id => 1, :amount => 100, :user_id => 1, :type => "partial")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Payment/prepareTransfer.json", "status_confirmation.json")
+        status = @freelancer.prepare_transfer
+        status.success?.should == true
+
+      end
+
+    end
+
+   end
 
 end

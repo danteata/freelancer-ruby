@@ -139,6 +139,50 @@ class MessageApiTest < Test::Unit::TestCase
 
     end
 
+    context "send message" do
+
+      should "be able to send message to user id" do
+
+        @freelancer.expects(:api_get).with("/Message/sendMessage.json", { :projectid => 1, :messagetext => "Test", :userid => 1 })
+        @freelancer.send_message(:project_id => 1, :text => "Test", :user_id => 1)
+
+      end
+
+      should "be able to send message to username" do
+
+        @freelancer.expects(:api_get).with("/Message/sendMessage.json", { :projectid => 1, :messagetext => "Test", :username => "test" })
+        @freelancer.send_message(:project_id => 1, :text => "Test", :username => "test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Message/sendMessage.json", "status_confirmation.json")
+        status = @freelancer.send_message
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "mark message read" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Message/markMessageAsRead.json", { :id => 1 })
+        @freelancer.mark_message_as_read(:message_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Message/markMessageAsRead.json", "status_confirmation.json")
+        status = @freelancer.mark_message_as_read
+        status.success?.should == true
+
+      end
+
+    end
   end
 
 end

@@ -67,6 +67,82 @@ class FreelancerApiTest < Test::Unit::TestCase
 
     end
 
+    context "bid on a project" do
+
+      should "be able to push bid" do
+
+        @freelancer.expects(:api_get).with("/Freelancer/placeBidOnProject.json", { :projectid => 1, :amount => 100, :days => 10, :description => "Test" })
+        @freelancer.bid_on_project(:project_id => 1, :amount => 100, :days => 10, :description => "Test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Freelancer/placeBidOnProject.json", "status_confirmation.json")
+        status = @freelancer.bid_on_project
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "retract bid from project" do
+
+      should "be able to retract bid" do
+
+        @freelancer.expects(:api_get).with("/Freelancer/retractBidFromProject.json", { :projectid => 1 })
+        @freelancer.retract_bid_from_project(:project_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Freelancer/retractBidFromProject.json", "status_confirmation.json")
+        status = @freelancer.retract_bid_from_project
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "accept won project" do
+
+      should "be able to accept project" do
+
+        @freelancer.expects(:api_get).with("/Freelancer/acceptBidWon.json", { :projectid => 1 })
+        @freelancer.accept_won_bid(:project_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Freelancer/acceptBidWon.json", "status_confirmation.json")
+        status = @freelancer.accept_won_bid
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "reject won project" do
+
+      should "be able to reject project" do
+
+        @freelancer.expects(:api_get).with("/Freelancer/acceptBidWon.json", { :projectid => 1, :state => 0 })
+        @freelancer.reject_won_bid(:project_id => 1)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Freelancer/acceptBidWon.json?state=0", "status_confirmation.json")
+        status = @freelancer.reject_won_bid
+        status.success?.should == true
+
+      end
+
+    end
+
   end
 
 end

@@ -45,6 +45,7 @@ module Freelancer
     autoload :Bid, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "bid")
     autoload :Message, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "message")
     autoload :ProjectBudget, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "project_budget")
+    autoload :StatusConfirmation, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "models", "status_confirmation")
   end
   
 end

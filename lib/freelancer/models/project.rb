@@ -62,6 +62,9 @@ module Freelancer
       # The maximum budget for the project
       json_attribute :maximum_budget, { :budget => :max }, Integer
 
+      # Budget option
+      json_attribute :budget_option, :budgetoption, Integer
+
       # The number of bids placed on the project
       #
       # Provided from:
@@ -91,6 +94,9 @@ module Freelancer
 
       # The time left before the project ends
       json_attribute :time_left, :timeleft, String
+
+      # The project duration
+      json_attribute :duration, String
 
       # The buyer that created the project
       json_attribute :buyer, User

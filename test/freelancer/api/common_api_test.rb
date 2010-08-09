@@ -77,6 +77,103 @@ class CommonApiTest < Test::Unit::TestCase
 
     end
 
+    context "request cancel project" do
+
+      should "be able to send request" do
+
+        @freelancer.expects(:api_get).with("/Common/requestCancelProject.json", { :projectid => 1, :selectedwinner => 1, :commenttext => "Test" })
+        @freelancer.request_cancel_project(:project_id => 1, :selected_winner => 1, :comment => "Test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Common/requestCancelProject.json", "status_confirmation.json")
+        status = @freelancer.request_cancel_project
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "post feedback" do
+
+      should "be able to push feedback to user id" do
+
+        @freelancer.expects(:api_get).with("/Common/postFeedback.json", { :projectid => 1, :userid => 1, :feedbacktext => "Test", :rating => 5 })
+        @freelancer.post_feedback(:project_id => 1, :user_id => 1, :comment => "Test", :rating => 5)
+
+      end
+
+      should "be able to push feedback to username" do
+
+        @freelancer.expects(:api_get).with("/Common/postFeedback.json", { :projectid => 1, :username => "test", :feedbacktext => "Test", :rating => 5 })
+        @freelancer.post_feedback(:project_id => 1, :username => "test", :comment => "Test", :rating => 5)
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Common/postFeedback.json", "status_confirmation.json")
+        status = @freelancer.post_feedback
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "post reply to feedback" do
+
+      should "be able to push feedback reply to user id" do
+
+        @freelancer.expects(:api_get).with("/Common/postReplyForFeedback.json", { :projectid => 1, :userid => 1, :feedbacktext => "Test" })
+        @freelancer.post_feedback_reply(:project_id => 1, :user_id => 1, :comment => "Test")
+
+      end
+
+      should "be able to push feedback reply to username" do
+
+        @freelancer.expects(:api_get).with("/Common/postReplyForFeedback.json", { :projectid => 1, :username => "test", :feedbacktext => "Test" })
+        @freelancer.post_feedback_reply(:project_id => 1, :username => "test", :comment => "Test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Common/postReplyForFeedback.json", "status_confirmation.json")
+        status = @freelancer.post_feedback_reply
+        status.success?.should == true
+
+      end
+
+    end
+
+    context "request withdraw feedback" do
+
+      should "be able to push request by user id" do
+
+        @freelancer.expects(:api_get).with("/Common/requestWithdrawFeedback.json", { :projectid => 1, :userid => 1 })
+        @freelancer.request_withdraw_feedback(:project_id => 1, :user_id => 1)
+
+      end
+
+      should "be able to push request by username" do
+
+        @freelancer.expects(:api_get).with("/Common/requestWithdrawFeedback.json", { :projectid => 1, :username => "test" })
+        @freelancer.request_withdraw_feedback(:project_id => 1, :username => "test")
+
+      end
+
+      should "parse response into a status confirmation model" do
+
+        stub_api_get("/Common/requestWithdrawFeedback.json", "status_confirmation.json")
+        status = @freelancer.request_withdraw_feedback
+        status.success?.should == true
+
+      end
+
+    end
+
   end
 
 end

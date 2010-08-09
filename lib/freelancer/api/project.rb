@@ -126,6 +126,26 @@ module Freelancer
           
         end
 
+        # Post a public message for a project
+        #
+        # Valid parameters are:
+        #   - project_id: the id of the project to post the message to
+        #   - message: the message to post
+        def post_public_project_message(*args)
+
+          params = extract_params(args)
+
+          # Execute the service call
+          result = api_get("/Project/postPublicMessage.json", build_api_params({
+            :projectid => params[:project_id],
+            :messagetext => params[:message]
+          }))
+
+          # Parse and return the response
+          ::Freelancer::Models::StatusConfirmation.parse(result, :shift => :"json-result")
+          
+        end
+
       end
 
     end
