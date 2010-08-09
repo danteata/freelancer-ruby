@@ -30,9 +30,10 @@ A Ruby gem for working with the new Freelancer.com API.
 * The Project API is missing support for PostPublicMessage.
 * The Message API is missing support for SendMessage and MarkMessageAsRead.
 
-== Usage
+== Documentation
 
-Examples have not been written yet.
+* RDoc: http://rdoc.info/projects/tanordheim/freelancer-ruby
+* Usage: http://wiki.github.com/tanordheim/freelancer-ruby/
 
 == Requirements
 
