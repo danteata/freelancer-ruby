@@ -75,7 +75,7 @@ module Freelancer
       return response.body
     end
     
-    # Execute a GET-requset for the specified API method and return the raw
+    # Execute a GET-request for the specified API method and return the raw
     # result.
     def api_get_raw(method, options = {})
       response = access_token.get(to_uri(method, options))
@@ -83,14 +83,6 @@ module Freelancer
       response.body
     end
     
-    # Execute a POST-request for the specified API method
-    # TODO: Finish this method, it should probably return some JSON decoded
-    # string.
-    def api_post(method, body)
-      response = access_token.post(method, body)
-      response.body
-    end
-
     private
 
     # Extract params from an array of arguments. Copied from ActiveSupport.
@@ -114,11 +106,29 @@ module Freelancer
       
       case response.code.to_i
       when 1..199
-        raise "Response code #{response.code}: #{response}"
+        raise FreelancerRequestError.new("Got response code #{response.code} when executing API request")
       when 201..503
-        raise "Response code: #{response.code}: #{response}"
+        raise FreelancerRequestError.new("Got response code #{response.code} when executing API request")
       end
-      
+
+      # Attempt to convert the response to a JSON data structure
+      json = JSONMapper::Parser.parse(response.body)
+
+      # If we didn't get a proper response, raise an error
+      raise FreelancerResponseError.new("No or invalid response received when executing API request") if json.nil?
+
+      # If the JSON data has an error element as the only element,
+      # assume this request fails
+      if json.keys.size == 1 && json.keys.first == :errors
+
+        error_code = json[:errors][:error][:code]
+        error_message = json[:errors][:error][:msg]
+        error_description = json[:errors][:error][:longmsg]
+
+        raise FreelancerResponseError.new("#{error_message} - #{error_description} (code #{error_code})")
+
+      end
+
     end
     
     # Create a URI from the specified method and options

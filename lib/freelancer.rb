@@ -5,6 +5,8 @@ require "json_mapper"
 module Freelancer
   
   class FreelancerError < StandardError; end
+  class FreelancerRequestError < FreelancerError; end
+  class FreelancerResponseError < FreelancerError; end
   
   autoload :API, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "api")
   autoload :Client, File.join(File.expand_path(File.dirname(__FILE__)), "freelancer", "client")
