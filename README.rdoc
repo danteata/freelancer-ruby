@@ -2,23 +2,18 @@
 
 Copyright (C) 2010 Trond Arve Nordheim - {Binary Marbles}[http://www.binarymarbles.com/]
 
-== NOTICE
-
-This is a project under heavy development. The API is far from stable yet, and
-the code is very unclean in some places. The API won't be considered stable
-until all the full Freelancer.com API is implemented and have tests verifying
-that they work like they should.
-
 == Description
 
-A Ruby gem for working with the new Freelancer.com API.
+A Ruby gem for working with the new Freelancer.com API. The goal of the project is to provide a clean way to integrate against the Freelancer.com APIs and still keep the integration code looking clean and neat.
+
+The library uses the JSON data provided by the Freelancer.com APIs, and attempts to elegantly map the JSON data structures returned from the APIs into more "Ruby-feeling" objects by utilizing the json_mapper gem.
 
 == Features
 
 * oAuth authentication.
 * Support for all Freelancer.com APIs.
 * Sandbox support.
-* Ruby on Rails support (via separate project {freelancer-rails}[http://github.com/tanordheim/freelancer-rails])
+* Ruby on Rails support (via separate project {freelancer-rails}[http://github.com/tanordheim/freelancer-rails] - this project is still under heavy development).
 
 == Issues and missing features
 
